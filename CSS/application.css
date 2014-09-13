@@ -1,9 +1,9 @@
-.ng-dirty, .ng-invalid {
-    border-color: red;
+.ng-valid {
+    border-color: lightgreen;
 }
-.ng-dirty, .ng-valid {
-    border-color: green;
+.ng-invalid .ng-dirty {
+    border-color: lightcoral;
 }
-.ng-untouched {
-    border-color: purple;
+#btn1, #btn2, #btn3 {
+    width: 150px;
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/HTML/chat.html" libraries="{jquery-1.11.1, socket.io-1.0.6}" />
     <file url="PROJECT" libraries="{bootstrap}" />
     <includedPredefinedLibrary name="Node.js Globals" />
   </component>

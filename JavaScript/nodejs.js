@@ -11,13 +11,13 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
     console.log("Someone connected");
     socket.on('disconnect', function(){
-       console.log("Someone disconnected")
+        console.log("Someone disconnected")
     });
 });
 io.on('connection', function(socket){
-   socket.on('chat message', function(msg){
-       console.log('message: ' + msg);
-   });
+    socket.on('chat message', function(msg){
+        console.log('message: ' + msg);
+    });
 });
 //var http = require('http');
 //var express = require('express');

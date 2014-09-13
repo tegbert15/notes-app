@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="engineering">
-<script src="angular.min.js"></script>
-<script src="Engineering.js"></script>
-<link rel="stylesheet" href="application.css" />
-<script src="jquery.js"></script>
-<script src="javascript.js"></script>
+<html lang="en" ng-app="web">
+<script src="../JavaScript/angular.js"></script>
+<link rel="stylesheet" href="../CSS/application.css" />
+<script src="../JavaScript/jquery.js"></script>
+<script src="../JavaScript/javascript.js"></script>
+<script src="../JavaScript/angular.min.js"></script>
+<script src="../JavaScript/nodejs.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <head>
@@ -12,7 +16,6 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
 <header>
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
@@ -30,9 +33,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="index.html">Home</a></li>
                     <li><a href="About.html">About</a></li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subjects <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="Math.html">Math</a></li>
@@ -40,7 +43,7 @@
                             <li><a href="English.html">English</a></li>
                             <li><a href="Engineering.html">Engineering</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="chat.html">Chat</a></li>
                             <li class="divider"></li>
                             <li><a href="#">One more separated link</a></li>
                         </ul>
@@ -48,9 +51,9 @@
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search resources">
+                        <input id="m" type="text" class="form-control" placeholder="Search resources">
                     </div>
-                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Link 3</a></li>
@@ -69,38 +72,17 @@
         </div><!-- /.container-fluid -->
     </nav>
 </header>
-<div>
-    <h1>Notes - Engineering</h1>
-    <div ng-controller="WebController as wc">
-        <blockquote ng-repeat="note in wc.notes">
-            <div class="col-xs-12 col-sm-12 col-md-12"><strong>{{note.name}}</strong></div>
-            <div class="col-xs-12 col-sm-12 col-md-12">{{note.body}}</div>
-            <div class="col-xs-12 col-sm-12 col-md-12">by: {{note.author}}</div>
-        </blockquote>
-        <div ng-controller="NoteController as nc">
-            <blockquote ng-repeat="note in nc.notes">
-                <div class="col-xs-12 col-sm-12 col-md-12"><strong>{{note.name}}</strong></div>
-                <div class="col-xs-12 col-sm-12 col-md-12">{{note.body}}</div>
-                <div class="col-xs-12 col-sm-12 col-md-12">by: {{note.author}}</div>
-            </blockquote>
-            <form name="notesForm" ng-submit="notesForm.$valid && nc.addNotes(wc.notes)" novalidate>
-                <blockquote>
-                    <div class="col-xs-12 col-sm-12 col-md-12"><strong>{{nc.note.name}}</strong></div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">{{nc.note.body}}</div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">{{nc.note.author}}</div>
-                </blockquote>
-                <input ng-model="nc.note.name" type="text" class="form-control col-xs-12 col-sm-6 col-md-3" placeholder="Name of Notes" required>
-                <textarea ng-model="nc.note.body" class="form-control" rows="10" placeholder="Enter Notes" required></textarea>
-                <form ng-model="nc.note.author" class="form-inline" role="form">
-                    <input ng-model="nc.note.author" type="email" class="form-control" placeholder="Email" required>
-                    <input class="btn btn-primary" type="submit" value="Submit"/>
-                </form>
-            </form>
-        </div>
-    </div>
+<ul id= "messages"></ul>
+<div class="jumbotron">
+    <h1>Welcome</h1>
+    <p><a class="btn btn-primary btn-lg" role="button" href="About.html">Learn more</a></p>
+</div>
+<body ng-controller="WebController as store">
+<div class="container" id="1">
+    <div class="col-xs-12 col-sm-6 col-md-6"><h3>Math<small><a href="Math.html"> Link</a></small></h3>Storage for all of your math needs and notes.</div>
+    <div class="col-xs-12 col-sm-6 col-md-6"><h3>Science<small><a href="Science.html"> Link</a></small></h3>Storage for all of your science needs and notes.</div>
+    <div class="col-xs-12 col-sm-6 com-md-6"><h3>English<small><a href="English.html"> Link</a></small></h3>Storage for all of your english needs and notes.</div>
+    <div class="col-xs-12 col-sm-6 col-md-6"><h3>Engineering<small><a href="Engineering.html"> Link</a></small></h3>Storage for all of your engineering needs and notes.</div>
 </div>
 </body>
-<script src="angular.min.js"></script>
-<script src="jquery-1.11.1.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </html>

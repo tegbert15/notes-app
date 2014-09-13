@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="english">
-<script src="angular.min.js"></script>
-<script src="English.js"></script>
-<link rel="stylesheet" href="application.css" />
-<script src="jquery.js"></script>
-<script src="javascript.js"></script>
-<script src="node.js"></script>
+<html lang="en" ng-app="engineering">
+<script src="../JavaScript/angular.min.js"></script>
+<script src="../JavaScript/Engineering.js"></script>
+<link rel="stylesheet" href="../CSS/application.css" />
+<script src="../JavaScript/jquery.js"></script>
+<script src="../JavaScript/javascript.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <head>
@@ -71,7 +70,7 @@
     </nav>
 </header>
 <div>
-    <h1>Notes - English</h1>
+    <h1>Notes - Engineering</h1>
     <div ng-controller="WebController as wc">
         <blockquote ng-repeat="note in wc.notes">
             <div class="col-xs-12 col-sm-12 col-md-12"><strong>{{note.name}}</strong></div>
@@ -91,9 +90,9 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">{{nc.note.author}}</div>
                 </blockquote>
                 <input ng-model="nc.note.name" type="text" class="form-control col-xs-12 col-sm-6 col-md-3" placeholder="Name of Notes" required>
-                <textarea ng-model="nc.note.body" id="1" class="form-control" rows="10" placeholder="Enter Notes" required></textarea>
-                <form ng-model="nc.note.author" id="2" class="form-inline" role="form">
-                    <input ng-model="nc.note.author" id="3" type="email" class="form-control" placeholder="Email" required>
+                <textarea ng-model="nc.note.body" class="form-control" rows="10" placeholder="Enter Notes" required></textarea>
+                <form ng-model="nc.note.author" class="form-inline" role="form">
+                    <input ng-model="nc.note.author" type="email" class="form-control" placeholder="Email" required>
                     <input class="btn btn-primary" type="submit" value="Submit"/>
                 </form>
             </form>
@@ -101,6 +100,7 @@
     </div>
 </div>
 </body>
-<script src="jquery-1.11.1.min.js"></script>
+<script src="../JavaScript/angular.min.js"></script>
+<script src="../JavaScript/jquery-1.11.1.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </html>

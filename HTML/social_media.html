@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="english">
-<script src="../JavaScript/angular.min.js"></script>
-<script src="../JavaScript/English.js"></script>
-<link rel="stylesheet" href="../CSS/application.css" />
+<html>
+<script src="../JavaScript/angular.js"></script>
 <script src="../JavaScript/jquery.js"></script>
 <script src="../JavaScript/javascript.js"></script>
-<script src="/JavaScript/nodejs.js"></script>
+<script src="../JavaScript/angular.min.js"></script>
+<script src="../JavaScript/nodejs.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+<link rel="stylesheet" href="../CSS/application.css" />
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<head lang="en">
     <meta charset="UTF-8">
-    <title>Notes - English</title>
+    <title>Notes - Social Media</title>
 </head>
 <body>
 <header>
@@ -43,7 +45,7 @@
                             <li class="divider"></li>
                             <li><a href="chat.html">Chat</a></li>
                             <li class="divider"></li>
-                            <li><a href="social_media.html">Social Media</a></li>
+                            <li><a href="#">Social Media</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -74,43 +76,8 @@
         </div><!-- /.container-fluid -->
     </nav>
 </header>
-<div>
-    <h1>Notes - English</h1>
-    <div ng-controller="WebController as wc">
-        <blockquote ng-repeat="note in wc.notes">
-            <div class="col-xs-12 col-sm-12 col-md-12"><strong>{{note.name}}</strong></div>
-            <div class="col-xs-12 col-sm-12 col-md-12">{{note.body}}</div>
-            <div class="col-xs-12 col-sm-12 col-md-12">by: {{note.author}}</div>
-        </blockquote>
-        <div ng-controller="NoteController as nc">
-            <blockquote ng-repeat="note in nc.notes">
-                <div class="col-xs-12 col-sm-12 col-md-12"><strong>{{note.name}}</strong></div>
-                <div class="col-xs-12 col-sm-12 col-md-12">{{note.body}}</div>
-                <div class="col-xs-12 col-sm-12 col-md-12">by: {{note.author}}</div>
-            </blockquote>
-            <form name="notesForm" ng-submit="notesForm.$valid && nc.addNotes(wc.notes)" novalidate>
-                <blockquote>
-                    <div class="col-xs-12 col-sm-12 col-md-12"><strong>{{nc.note.name}}</strong></div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">{{nc.note.body}}</div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">{{nc.note.author}}</div>
-                </blockquote>
-                <input ng-model="nc.note.name" type="text" class="form-control col-xs-12 col-sm-6 col-md-3" placeholder="Name of Notes" required>
-                <div class="col-xs-12 col-sm-12 col-md-12"></div>
-                <div class="col-xs-12 col-sm-12 col-md-12"></div>
-                <textarea ng-model="nc.note.body" id="1" class="form-control" rows="10" placeholder="Enter Notes" required></textarea>
-                <div class="col-xs-12 col-sm-12 col-md-12"></div>
-                <div class="col-xs-12 col-sm-12 col-md-12"></div>
-                <form ng-model="nc.note.author" id="2" class="form-inline" role="form">
-                    <input ng-model="nc.note.author" id="3" type="email" class="form-control" placeholder="Email" required>
-                    <div class="col-xs-12 col-sm-12 col-md-12"></div>
-                    <div class="col-xs-12 col-sm-12 col-md-12"></div>
-                    <input class="btn btn-primary" type="submit" value="Submit"/>
-                </form>
-            </form>
-        </div>
-    </div>
-</div>
+<button class="btn btn-primary col-xs-12 col-sm-12 col-md-12" id="btn1"><img class="inverse" src="../Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_30_facebook_inverse.png"/> Facebook</button>
+<button class="btn btn-info col-xs-12 col-sm-12 col-md-12" id="btn2"><img src="../Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_31_twitter_inverse.png"/> Twitter</button>
+<button class="btn btn-danger col-xs-12 col-sm-12 col-md-12" id="btn3"><img src="../Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_02_google_plus_inverse.png"/> Google +</button>
 </body>
-<script src="../JavaScript/jquery-1.11.1.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </html>

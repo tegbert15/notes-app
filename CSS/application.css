@@ -1,7 +1,7 @@
-.ng-valid {
+input textarea.ng-valid .ng-dirty {
     border-color: lightgreen;
 }
-.ng-invalid .ng-dirty {
+input.ng-invalid .ng-dirty {
     border-color: lightcoral;
 }
 #btn1, #btn2, #btn3 {

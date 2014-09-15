@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="web">
-<script src="../JavaScript/angular.js"></script>
+<script src="../JavaScript/web.js"></script>
 <script src="../JavaScript/jquery.js"></script>
 <script src="../JavaScript/javascript.js"></script>
 <script src="../JavaScript/angular.min.js"></script>
@@ -16,8 +16,8 @@
     <meta charset="UTF-8">
     <title>Notes - Home</title>
 </head>
-<body ng-controller="WebController as store">
-<header>
+<body ng-controller="WebController as wc">
+<header ng-controller="NoteController as nc">
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -52,11 +52,7 @@
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input id="m" type="text" class="form-control" placeholder="Search resources">
-                        <!--<ul class="dropdown">-->
-                            <!--<li ng-repeat="note in notes | filter:query"></li>-->
-                            <!--{{note.name}}-->
-                        <!--</ul>-->
+                        <input ng-model="query" id="m" type="text" class="form-control" placeholder="Search resources">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

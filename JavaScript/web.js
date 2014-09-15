@@ -3,7 +3,13 @@
 
     app.controller('WebController', function(){
 
-       this.notes = [];
+       this.notes = [
+           {
+               name: "Swag",
+               body: 'Tobin',
+               author: 'tobinegbert@gmail.com'
+           }
+       ];
     });
 
     app.controller('NoteController', function() {

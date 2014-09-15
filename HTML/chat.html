@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <script>
     var socket = io();
-    $('form').submit(function(){
+    $('footer form').submit(function(){
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
         return false;

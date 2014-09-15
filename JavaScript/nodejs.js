@@ -4,8 +4,14 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var mongoose = require('mongoose');
 
+var htmlRoot = '/Users/tobinegbert/WebstormProjects/notes-app/HTML/';
+
 app.get('/', function(req, res){
-    res.sendfile('index.html');
+    res.sendFile(htmlRoot + 'index.html');
+});
+
+app.get('/Math.html', function(req, res){
+    res.sendFile(htmlRoot + 'Math.html');
 });
 
 io.on('connection', function(socket){
@@ -35,6 +41,6 @@ io.on('connection', function(socket){
 //    console.log('Tobin connected');
 //    client.emit('messages', { hello: 'world' });
 //});
-var save = http.listen(8000, function () {
+http.listen(8000, function () {
     console.log('listening on 192.168.33.10:8000');
 });

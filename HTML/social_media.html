@@ -7,10 +7,13 @@
 <script src="../JavaScript/nodejs.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
-<link rel="stylesheet" href="../App/CSS/application.css" />
+<link rel="stylesheet" href="../CSS/application.css" />
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script>
+    var socket = io();
+</script>
 <head lang="en">
     <meta charset="UTF-8">
     <title>Notes - Social Media</title>
@@ -33,7 +36,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="About.html">About</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subjects <span class="caret"></span></a>
@@ -76,8 +79,8 @@
         </div><!-- /.container-fluid -->
     </nav>
 </header>
-<button class="btn btn-primary col-xs-12 col-sm-12 col-md-12" id="btn1"><img class="inverse" src="../App/Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_30_facebook_inverse.png"/> Facebook</button>
-<button class="btn btn-info col-xs-12 col-sm-12 col-md-12" id="btn2"><img src="../App/Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_31_twitter_inverse.png"/> Twitter</button>
-<button class="btn btn-danger col-xs-12 col-sm-12 col-md-12" id="btn3"><img src="../App/Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_02_google_plus_inverse.png"/> Google +</button>
+<button class="btn btn-primary col-xs-12 col-sm-12 col-md-12" id="btn1"><img class="inverse" src="../Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_30_facebook_inverse.png"/> Facebook</button>
+<button class="btn btn-info col-xs-12 col-sm-12 col-md-12" id="btn2"><img src="../Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_31_twitter_inverse.png"/> Twitter</button>
+<button class="btn btn-danger col-xs-12 col-sm-12 col-md-12" id="btn3"><img src="../Dependancies/glyphicons_free/glyphicons_social/png/glyphicons_social_02_google_plus_inverse.png"/> Google +</button>
 </body>
 </html>

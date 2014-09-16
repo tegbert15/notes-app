@@ -6,8 +6,41 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 var htmlRoot = '/Users/tobinegbert/WebstormProjects/notes-app/';
 
-app.get('/', function(req, res){
+app.get('/index.html', function(req, res){
     res.sendFile(htmlRoot + 'HTML/index.html');
+});
+app.get('/', function(req, res) {
+    res.sendFile(htmlRoot + 'HTML/index.html');
+});
+app.get('/Engineering.html', function(req, res) {
+    res.sendFile(htmlRoot + 'HTML/Engineering.html');
+});
+app.get('/English.html', function(req, res) {
+    res.sendFile(htmlRoot + 'HTML/English.html');
+});
+app.get('/Science.html', function(req, res) {
+    res.sendFile(htmlRoot + 'HTML/Science.html');
+});
+app.get('/chat.html', function(req, res) {
+    res.sendFile(htmlRoot + 'HTML/chat.html');
+});
+app.get('/Math.html', function(req, res){
+    res.sendFile(htmlRoot + 'HTML/Math.html');
+});
+app.get('/social_media.html', function(req, res) {
+    res.sendFile(htmlRoot + 'HTML/social_media.html');
+});
+app.get('/JavaScript/*', function(req, res){
+    res.sendFile(htmlRoot + req.path);
+});
+app.get('/CSS/*', function(req, res){
+    res.sendFile(htmlRoot + req.path);
+});
+app.get('/Dependancies/*', function(req,res){
+    res.sendFile(htmlRoot + req.path);
+});
+app.get('/About.html', function(req, res) {
+    res.sendFile(htmlRoot + 'HTML/About.html');
 });
 
 MongoClient.connect("mongodb://localhost:27017/exampleDb", function(err, db) {
